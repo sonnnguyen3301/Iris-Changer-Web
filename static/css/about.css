@@ -1,0 +1,30 @@
+
+#box-about .content .title{
+	height: 50px;
+	font: bold 16px/50px Arial, Helvetica, sans-serif;
+}
+
+#box-about .content p.main{
+	text-transform: uppercase;
+	line-height: 30px;
+	color: #637f11;
+	font-weight: bold;
+	font-size: 12px;
+}
+
+#box-about .content p{
+	line-height: 20px;
+	margin-bottom: 25px
+}
+
+#box-about .content ul li {
+	line-height: 20px;
+	margin-top: 25px;
+	padding-left: 20px;
+	background: url(../images/about-page/about-li-icon.png) left 6px no-repeat;
+}
+
+#box-about .content ul li span{
+	font-weight: bold;
+	color: #637f11;
+}

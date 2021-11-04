@@ -1,0 +1,77 @@
+
+/* BREADCRUMB
+============================================================================= */
+
+#box-breadcrumb {
+	margin-bottom: 20px;
+}
+
+#box-breadcrumb .content a {
+	color: #447f60;
+}
+
+#box-breadcrumb .content a:hover {
+	text-decoration: underline;
+}
+
+#box-breadcrumb .content a.active {
+	text-decoration: underline;
+	color: #2a002a;
+}
+
+/* CATEGORY
+============================================================================= */
+
+#box-categories .content {
+	padding-bottom: 1px;
+}
+
+#box-categories .box-category {
+	width: 160px;
+	min-width: 160px;
+	display: inline-block;
+	margin-right: 6px;
+	*margin-right: 8px;
+	zoom: 1;
+	*display: inline;
+}
+
+#box-categories .box-category .content{
+	height: 180px;
+	min-height: 180px;
+	position: relative;
+}
+
+#box-categories .box-category .content p.image{
+	position: absolute;
+	height: 152px;
+	top: 0px;
+	left: 0px;
+	width: 100%;
+	line-height: 152px;
+	text-align: center;
+}
+
+#box-categories .box-category .content p.image img{
+	vertical-align: middle;
+}
+
+#box-categories .box-category .content p.title {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	height: 28px;
+	font-size: 13px;
+	border-top: 1px solid #d2d2d2;
+	text-align: center;
+}
+
+#box-categories .box-category .content p.title a{
+	color: #3f3f5f;
+}
+
+#box-categories .box-category .content p.title a:hover{
+	color: #00F;
+	text-decoration: underline;
+}

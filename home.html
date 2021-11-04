@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python script</title>
+    <!-- <link rel="stylesheet" href="css\styles.css"> -->
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/dropdown.css' %}">
+</head>
+<body>
+    <div class="dropdown">
+        <button class="dropbtn">Dropdown</button>
+        <div class="dropdown-content">
+          <a href="#">
+            <form action="/external/" method="post" enctype="multipart/form-data">
+                <input type="submit" value="Execute External Python Script">Link 1
+            </form>     
+          </a>
+             
+          <a href="#"><input type="submit" value="Execute External Python Script">Link 2</a>
+          <a href="#"><input type="submit" value="Execute External Python Script">Link 3</a>
+        </div>
+      </div>
+    {% if raw_url or edit_url %}
+    <span>
+    RAW IMAGE:
+    <div class="custom_border">
+    <img src={{raw_url}} height=200 width=200>
+    </div>  
+    PROCESSED IMAGE:
+    <img src={{edit_url}} height=500 width=500>
+    </span>
+    {% endif %}
+    <br><br>
+    <form action="/external/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <br><br>
+        <input type='file' name='image' required>
+        <br><br>
+        <input type="submit" value="Execute External Python Script">
+    </form>
+    
+</body>
+</html>

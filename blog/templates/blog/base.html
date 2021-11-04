@@ -1,0 +1,479 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" type="text/css" href='/static/css/styles.css'>
+    {% if title %}
+        <title>Django Blog - {{ title }}</title>
+    {% else %}
+        <title>Django Blog</title>
+    {% endif %}
+</head>
+<body>
+  <form id="myForm" action="/external/" method="post" enctype="multipart/form-data">
+  <div id="wrapper">
+    <!-- HEADER - START -->
+    <div id="header">
+        <div class="top">
+              <!-- Logo -->
+              <!-- <div class="logo">&nbsp;<img src="images/logo.jpg" alt="logo">&nbsp;</div> -->
+              <!-- Currency -->
+              <!-- <div class="currency">
+                  <span>Currency</span>
+                  <select>
+                      <option>US Dollar &#8364; </option>
+                      <option>VNĐ đ</option>
+                  </select>
+                  <a class="btn-link" href="#"><span>Change</span></a>
+              </div>  -->
+              <!-- <div class="clr"></div> -->
+    </div>
+          <!-- Menu -->
+          <div class="menu">
+            <div class="right">
+                <div class="content">
+                    <ul>
+                      <!-- button id="color_map" type="submit" name="autumn" -->
+                          <li class="dropdown">
+                              <a href="javascript:void(0)" class="dropbtn " >Open CV</a>
+                              <div class="dropdown-content scrollable-menu" role="menu">
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="autumn_c"> <img src="{% static "colormaps\opencv\autumn.png" %}"><a href="#"> Autumn</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="bone_c" > <img src="{% static "colormaps\opencv\bone.png" %}"><a href="#">Bone</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="jet_c" > <img src="{% static "colormaps\opencv\jet.png" %}"><a href="#">Jet</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="winter_c" > <img src="{% static "colormaps\opencv\winter.png" %}"><a href="#">Winter</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="rainbow_c" > <img src="{% static "colormaps\opencv\rainbow.png" %}"><a href="#">Rainbow</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="ocean_c" > <img src="{% static "colormaps\opencv\ocean.png" %}"><a href="#">Ocean</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="summer_c" > <img src="{% static "colormaps\opencv\summer.png" %}"><a href="#">Summer</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="spring_c" > <img src="{% static "colormaps\opencv\spring.png" %}"><a href="#">Spring</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="cool_c" > <img src="{% static "colormaps\opencv\cool.png" %}"><a href="#">Cool</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="hsv_c" > <img src="{% static "colormaps\opencv\hsv.png" %}"><a href="#">Hsv</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="pink_c" > <img src="{% static "colormaps\opencv\pink.png" %}"><a href="#">Pink</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="hot_c" > <img src="{% static "colormaps\opencv\hot.png" %}"><a href="#">Hot</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="parula_c" > <img src="{% static "colormaps\opencv\parula.png" %}"><a href="#">Parula</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="magma_c" > <img src="{% static "colormaps\opencv\magma.png" %}"><a href="#">Magma</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="inferno_c" > <img src="{% static "colormaps\opencv\inferno.png" %}"><a href="#">Inferno</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="plasma_c" > <img src="{% static "colormaps\opencv\plasma.png" %}"><a href="#">Plasma</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="viridis_c" > <img src="{% static "colormaps\opencv\viridis.png" %}"><a href="#">Viridis</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="cividis_c" > <img src="{% static "colormaps\opencv\cividis.png" %}"><a href="#">Cividis</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="twilight_c" > <img src="{% static "colormaps\opencv\twilight.png" %}"><a href="#">Twilight</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="twilight_shifted_c" > <img src="{% static "colormaps\opencv\twilight_shifted.png" %}"><a href="#">Twilight_Shift</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="turbo_c" > <img src="{% static "colormaps\opencv\turbo.png" %}"><a href="#">Turbo</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="deepgreen_c" > <img src="{% static "colormaps\opencv\deepgreen.png" %}"><a href="#">Deepgreen</a></button></a>
+                              </div>                            
+                          </li> 
+                          <li class="dropdown">
+                              <a href="javascript:void(0)" class="dropbtn " >Perceptiually</a>
+                              <div class="dropdown-content scrollable-menu" role="menu">
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="viridis" > <img src="{% static "colormaps\Perceptiually\viridis.png" %}"><a href="#">Viridis</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="plasma" > <img src="{% static "colormaps\Perceptiually\plasma.png" %}"><a href="#">Plasma</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="inferno" > <img src="{% static "colormaps\Perceptiually\inferno.png" %}"><a href="#">Inferno</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="magma" > <img src="{% static "colormaps\Perceptiually\magma.png" %}"><a href="#">Magma</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="cividis" > <img src="{% static "colormaps\Perceptiually\cividis.png" %}"><a href="#">Cividis</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="viridis_r" > <img src="{% static "colormaps\Perceptiually\viridis_r.png" %}"><a href="#">Viridis_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="plasma_r" > <img src="{% static "colormaps\Perceptiually\plasma_r.png" %}"><a href="#">Plasma_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="inferno_r" > <img src="{% static "colormaps\Perceptiually\inferno_r.png" %}"><a href="#">Inferno_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="magma_r" > <img src="{% static "colormaps\Perceptiually\magma_r.png" %}"><a href="#">Magma_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="cividis_r" > <img src="{% static "colormaps\Perceptiually\cividis_r.png" %}"><a href="#">Cividis_r</a></button></a>
+                              </div>                            
+                          </li>
+                           <li class="dropdown">
+                              <a href="javascript:void(0)" class="dropbtn " >Sequential(1)</a>
+                              <div class="dropdown-content scrollable-menu" role="menu">
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Greys"> <img src="{% static "colormaps\Sequential_1\Greys.png" %}"><a href="#"> Greys</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Purples" > <img src="{% static "colormaps\Sequential_1\Purples.png" %}"><a href="#">Purples</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Blues" > <img src="{% static "colormaps\Sequential_1\Blues.png" %}"><a href="#">Blues</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Greens" > <img src="{% static "colormaps\Sequential_1\Greens.png" %}"><a href="#">Greens</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Oranges" > <img src="{% static "colormaps\Sequential_1\Oranges.png" %}"><a href="#">Oranges</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Reds" > <img src="{% static "colormaps\Sequential_1\Reds.png" %}"><a href="#">Reds</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="YlOrBr" > <img src="{% static "colormaps\Sequential_1\YlOrBr.png" %}"><a href="#">YlOrBr</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="YlOrRd" > <img src="{% static "colormaps\Sequential_1\YlOrRd.png" %}"><a href="#">YlOrRd</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="OrRd" > <img src="{% static "colormaps\Sequential_1\OrRd.png" %}"><a href="#">OrRd</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="PuRd" > <img src="{% static "colormaps\Sequential_1\PuRd.png" %}"><a href="#">PuRd</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="RdPu" > <img src="{% static "colormaps\Sequential_1\RdPu.png" %}"><a href="#">RdPu</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="BuPu" > <img src="{% static "colormaps\Sequential_1\BuPu.png" %}"><a href="#">BuPu</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="GnBu" > <img src="{% static "colormaps\Sequential_1\GnBu.png" %}"><a href="#">GnBu</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="PuBu" > <img src="{% static "colormaps\Sequential_1\PuBu.png" %}"><a href="#">PuBu</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="YlGnBu" > <img src="{% static "colormaps\Sequential_1\YlGnBu.png" %}"><a href="#">YlGnBu</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="PuBuGn" > <img src="{% static "colormaps\Sequential_1\PuBuGn.png" %}"><a href="#">PuBuGn</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="BuGn" > <img src="{% static "colormaps\Sequential_1\BuGn.png" %}"><a href="#">BuGn</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="YlGn" > <img src="{% static "colormaps\Sequential_1\YlGn.png" %}"><a href="#">YlGn</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Greys_r" > <img src="{% static "colormaps\Sequential_1\Greys_r.png" %}"><a href="#">Greys_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Purples_r" > <img src="{% static "colormaps\Sequential_1\Purples_r.png" %}"><a href="#">Purples_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Blues_r" > <img src="{% static "colormaps\Sequential_1\Blues_r.png" %}"><a href="#">Blues_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Greens_r" > <img src="{% static "colormaps\Sequential_1\Greens_r.png" %}"><a href="#">Greens_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Oranges_r" > <img src="{% static "colormaps\Sequential_1\Oranges_r.png" %}"><a href="#">Oranges_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Reds_r" > <img src="{% static "colormaps\Sequential_1\Reds_r.png" %}"><a href="#">Reds_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="YlOrBr_r" > <img src="{% static "colormaps\Sequential_1\YlOrBr_r.png" %}"><a href="#">YlOrBr_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="YlOrRd_r" > <img src="{% static "colormaps\Sequential_1\YlOrRd_r.png" %}"><a href="#">YlOrRd_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="OrRd_r" > <img src="{% static "colormaps\Sequential_1\OrRd_r.png" %}"><a href="#">OrRd_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="PuRd_r" > <img src="{% static "colormaps\Sequential_1\PuRd_r.png" %}"><a href="#">PuRd_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="RdPu_r" > <img src="{% static "colormaps\Sequential_1\RdPu_r.png" %}"><a href="#">RdPu_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="BuPu_r" > <img src="{% static "colormaps\Sequential_1\BuPu_r.png" %}"><a href="#">BuPu_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="GnBu_r" > <img src="{% static "colormaps\Sequential_1\GnBu_r.png" %}"><a href="#">GnBu_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="PuBu_r" > <img src="{% static "colormaps\Sequential_1\PuBu_r.png" %}"><a href="#">PuBu_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="YlGnBu_r" > <img src="{% static "colormaps\Sequential_1\YlGnBu_r.png" %}"><a href="#">YlGnBu_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="PuBuGn_r" > <img src="{% static "colormaps\Sequential_1\PuBuGn_r.png" %}"><a href="#">PuBuGn_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="BuGn_r" > <img src="{% static "colormaps\Sequential_1\BuGn_r.png" %}"><a href="#">BuGn_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="YlGn_r" > <img src="{% static "colormaps\Sequential_1\YlGn_r.png" %}"><a href="#">YlGn_r</a></button></a>
+                                  
+                              </div>                            
+                          </li>
+                          <li class="dropdown">
+                              <a href="javascript:void(0)" class="dropbtn " >Sequential(2)</a>
+                              <div class="dropdown-content scrollable-menu" role="menu">
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="binary"> <img src="{% static "colormaps\Sequential_2\binary.png" %}"><a href="#"> Binary</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_yarg" > <img src="{% static "colormaps\Sequential_2\gist_yarg.png" %}"><a href="#">Gist yarg</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_gray" > <img src="{% static "colormaps\Sequential_2\gist_gray.png" %}"><a href="#">Gist gray</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gray" > <img src="{% static "colormaps\Sequential_2\gray.png" %}"><a href="#">Gray</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="bone" > <img src="{% static "colormaps\Sequential_2\bone.png" %}"><a href="#">Bone</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="pink" > <img src="{% static "colormaps\Sequential_2\pink.png" %}"><a href="#">Pink</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="spring" > <img src="{% static "colormaps\Sequential_2\spring.png" %}"><a href="#">Spring</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="summer" > <img src="{% static "colormaps\Sequential_2\summer.png" %}"><a href="#">Summer</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="autumn" > <img src="{% static "colormaps\Sequential_2\autumn.png" %}"><a href="#">Autumn</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="winter" > <img src="{% static "colormaps\Sequential_2\winter.png" %}"><a href="#">Winter</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="cool" > <img src="{% static "colormaps\Sequential_2\cool.png" %}"><a href="#">Cool</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Wistia" > <img src="{% static "colormaps\Sequential_2\Wistia.png" %}"><a href="#">Wistia</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="hot" > <img src="{% static "colormaps\Sequential_2\hot.png" %}"><a href="#">Hot</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="afmhot" > <img src="{% static "colormaps\Sequential_2\afmhot.png" %}"><a href="#">Afmhot</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_heat" > <img src="{% static "colormaps\Sequential_2\gist_heat.png" %}"><a href="#">Gist heat</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="copper" > <img src="{% static "colormaps\Sequential_2\copper.png" %}"><a href="#">Copper</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="binary_r" > <img src="{% static "colormaps\Sequential_2\binary_r.png" %}"><a href="#">Binary_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_yarg_r" > <img src="{% static "colormaps\Sequential_2\gist_yarg_r.png" %}"><a href="#">Gist yarg_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_gray_r" > <img src="{% static "colormaps\Sequential_2\gist_gray_r.png" %}"><a href="#">Gist gray_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gray_r" > <img src="{% static "colormaps\Sequential_2\gray_r.png" %}"><a href="#">Gray_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="bone_r" > <img src="{% static "colormaps\Sequential_2\bone_r.png" %}"><a href="#">Bone_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="pink_r" > <img src="{% static "colormaps\Sequential_2\pink_r.png" %}"><a href="#">Pink_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="spring_r" > <img src="{% static "colormaps\Sequential_2\spring_r.png" %}"><a href="#">Spring_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="summer_r" > <img src="{% static "colormaps\Sequential_2\summer_r.png" %}"><a href="#">Summer_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="autumn_r" > <img src="{% static "colormaps\Sequential_2\autumn_r.png" %}"><a href="#">Autumn_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="winter_r" > <img src="{% static "colormaps\Sequential_2\winter_r.png" %}"><a href="#">Winter_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="cool_r" > <img src="{% static "colormaps\Sequential_2\cool_r.png" %}"><a href="#">Cool_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Wistia_r" > <img src="{% static "colormaps\Sequential_2\Wistia_r.png" %}"><a href="#">Wistia_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="hot_r" > <img src="{% static "colormaps\Sequential_2\hot_r.png" %}"><a href="#">Hot_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="afmhot_r" > <img src="{% static "colormaps\Sequential_2\afmhot_r.png" %}"><a href="#">Afmhot_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_heat_r" > <img src="{% static "colormaps\Sequential_2\gist_heat_r.png" %}"><a href="#">Gist_heat_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="copper_r" > <img src="{% static "colormaps\Sequential_2\copper_r.png" %}"><a href="#">Copper_r</a></button></a>
+                                  
+                              </div>                            
+                          </li>
+                          <li class="dropdown">
+                              <a href="javascript:void(0)" class="dropbtn " >Diverging</a>
+                              <div class="dropdown-content scrollable-menu" role="menu">
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="PiYG"> <img src="{% static "colormaps\Diverging\PiYG.png" %}"><a href="#">PiYG</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="PRGn" > <img src="{% static "colormaps\Diverging\PRGn.png" %}"><a href="#">PRGn</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="BrBG" > <img src="{% static "colormaps\Diverging\BrBG.png" %}"><a href="#">BrBG</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="PuOr" > <img src="{% static "colormaps\Diverging\PuOr.png" %}"><a href="#">PuOr</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="RdGy" > <img src="{% static "colormaps\Diverging\RdGy.png" %}"><a href="#">RdGy</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="RdBu" > <img src="{% static "colormaps\Diverging\RdBu.png" %}"><a href="#">RdBu</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="RdYlBu" > <img src="{% static "colormaps\Diverging\RdYlBu.png" %}"><a href="#">RdYlBu</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="RdYlGn" > <img src="{% static "colormaps\Diverging\RdYlGn.png" %}"><a href="#">RdYlGn</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Spectral" > <img src="{% static "colormaps\Diverging\Spectral.png" %}"><a href="#">Spectral</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="coolwarm" > <img src="{% static "colormaps\Diverging\coolwarm.png" %}"><a href="#">Coolwarm</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="bwr" > <img src="{% static "colormaps\Diverging\bwr.png" %}"><a href="#">Bwr</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="seismic" > <img src="{% static "colormaps\Diverging\seismic.png" %}"><a href="#">Seismic</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="PiYG_r" > <img src="{% static "colormaps\Diverging\PiYG_r.png" %}"><a href="#">PiYG_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="PRGn_r" > <img src="{% static "colormaps\Diverging\PRGn_r.png" %}"><a href="#">PRGn_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="BrBG_r" > <img src="{% static "colormaps\Diverging\BrBG_r.png" %}"><a href="#">BrBG_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="PuOr_r" > <img src="{% static "colormaps\Diverging\PuOr_r.png" %}"><a href="#">PuOr_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="RdGy_r" > <img src="{% static "colormaps\Diverging\RdGy_r.png" %}"><a href="#">RdGy_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="RdBu_r" > <img src="{% static "colormaps\Diverging\RdBu_r.png" %}"><a href="#">RdBu_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="RdYlBu_r" > <img src="{% static "colormaps\Diverging\RdYlBu_r.png" %}"><a href="#">RdYlBu_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="RdYlGn_r" > <img src="{% static "colormaps\Diverging\RdYlGn_r.png" %}"><a href="#">RdYlGn_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Spectral_r" > <img src="{% static "colormaps\Diverging\Spectral_r.png" %}"><a href="#">Spectral_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="coolwarm_r" > <img src="{% static "colormaps\Diverging\coolwarm_r.png" %}"><a href="#">Coolwarm_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="bwr_r" > <img src="{% static "colormaps\Diverging\bwr_r.png" %}"><a href="#">Bwr_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="seismic_r" > <img src="{% static "colormaps\Diverging\seismic_r.png" %}"><a href="#">Seismic_r</a></button></a>
+                              </div>                            
+                          </li>
+                          <li class="dropdown">
+                              <a href="javascript:void(0)" class="dropbtn " >Qualitative</a>
+                              <div class="dropdown-content scrollable-menu" role="menu">
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Pastel1"> <img src="{% static "colormaps\Qualitative\Pastel1.png" %}"><a href="#">Pastel1</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Pastel2" > <img src="{% static "colormaps\Qualitative\Pastel2.png" %}"><a href="#">Pastel2</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Paired" > <img src="{% static "colormaps\Qualitative\Paired.png" %}"><a href="#">Paired</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Accent" > <img src="{% static "colormaps\Qualitative\Accent.png" %}"><a href="#">Accent</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Dark2" > <img src="{% static "colormaps\Qualitative\Dark2.png" %}"><a href="#">Dark2</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Set1" > <img src="{% static "colormaps\Qualitative\Set1.png" %}"><a href="#">Set1</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Set2" > <img src="{% static "colormaps\Qualitative\Set2.png" %}"><a href="#">Set2</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Set3" > <img src="{% static "colormaps\Qualitative\Set3.png" %}"><a href="#">Set3</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="tab10" > <img src="{% static "colormaps\Qualitative\tab10.png" %}"><a href="#">tab10</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="tab20" > <img src="{% static "colormaps\Qualitative\tab20.png" %}"><a href="#">tab20</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="tab20b" > <img src="{% static "colormaps\Qualitative\tab20b.png" %}"><a href="#">tab20b</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="tab20c" > <img src="{% static "colormaps\Qualitative\tab20c.png" %}"><a href="#">tab20c</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Pastel1_r" > <img src="{% static "colormaps\Qualitative\Pastel1_r.png" %}"><a href="#">Pastel1_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Pastel2_r" > <img src="{% static "colormaps\Qualitative\Pastel2_r.png" %}"><a href="#">Pastel2_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Paired_r" > <img src="{% static "colormaps\Qualitative\Paired_r.png" %}"><a href="#">Paired_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Accent_r" > <img src="{% static "colormaps\Qualitative\Accent_r.png" %}"><a href="#">Accent_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Dark2_r" > <img src="{% static "colormaps\Qualitative\Dark2_r.png" %}"><a href="#">Dark2_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Set1_r" > <img src="{% static "colormaps\Qualitative\Set1_r.png" %}"><a href="#">Set1_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Set2_r" > <img src="{% static "colormaps\Qualitative\Set2_r.png" %}"><a href="#">Set2_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="Set3_r" > <img src="{% static "colormaps\Qualitative\Set3_r.png" %}"><a href="#">Set3_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="tab10_r" > <img src="{% static "colormaps\Qualitative\tab10_r.png" %}"><a href="#">tab10_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="tab20_r" > <img src="{% static "colormaps\Qualitative\tab20_r.png" %}"><a href="#">tab20_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="tab20b_r" > <img src="{% static "colormaps\Qualitative\tab20b_r.png" %}"><a href="#">tab20b_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="tab20c_r" > <img src="{% static "colormaps\Qualitative\tab20c_r.png" %}"><a href="#">tab20c_r</a></button></a>
+                              </div>                            
+                          </li>
+                          <li class="dropdown">
+                              <a href="javascript:void(0)" class="dropbtn " >Miscellaneous</a>
+                              <div class="dropdown-content scrollable-menu" role="menu">
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="flag"> <img src="{% static "colormaps\Miscellaneous\flag.png" %}"><a href="#">Flag</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="prism" > <img src="{% static "colormaps\Miscellaneous\prism.png" %}"><a href="#">Prism</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="ocean" > <img src="{% static "colormaps\Miscellaneous\ocean.png" %}"><a href="#">Ocean</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_earth" > <img src="{% static "colormaps\Miscellaneous\gist_earth.png" %}"><a href="#">Gist_earth</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="terrain" > <img src="{% static "colormaps\Miscellaneous\terrain.png" %}"><a href="#">Terrain</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_stern" > <img src="{% static "colormaps\Miscellaneous\gist_stern.png" %}"><a href="#">Gist_stern</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gnuplot" > <img src="{% static "colormaps\Miscellaneous\gnuplot.png" %}"><a href="#">Gnuplot</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gnuplot2" > <img src="{% static "colormaps\Miscellaneous\gnuplot2.png" %}"><a href="#">Gnuplot2</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="CMRmap" > <img src="{% static "colormaps\Miscellaneous\CMRmap.png" %}"><a href="#">CMRmap</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="cubehelix" > <img src="{% static "colormaps\Miscellaneous\cubehelix.png" %}"><a href="#">Cubehelix</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="brg" > <img src="{% static "colormaps\Miscellaneous\brg.png" %}"><a href="#">Brg</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="hsv" > <img src="{% static "colormaps\Miscellaneous\hsv.png" %}"><a href="#">Hsv</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_rainbow" > <img src="{% static "colormaps\Miscellaneous\gist_rainbow.png" %}"><a href="#">Gist_rainbow</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="rainbow" > <img src="{% static "colormaps\Miscellaneous\rainbow.png" %}"><a href="#">Rainbow</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="jet" > <img src="{% static "colormaps\Miscellaneous\jet.png" %}"><a href="#">Jet</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="nipy_spectral" > <img src="{% static "colormaps\Miscellaneous\nipy_spectral.png" %}"><a href="#">Nipy_spectral</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_ncar" > <img src="{% static "colormaps\Miscellaneous\gist_ncar.png" %}"><a href="#">Gist_ncar</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="flag_r" > <img src="{% static "colormaps\Miscellaneous\flag_r.png" %}"><a href="#">Flag_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="prism_r" > <img src="{% static "colormaps\Miscellaneous\prism_r.png" %}"><a href="#">Prism_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="ocean_r" > <img src="{% static "colormaps\Miscellaneous\ocean_r.png" %}"><a href="#">Ocean_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_earth_r" > <img src="{% static "colormaps\Miscellaneous\gist_earth_r.png" %}"><a href="#">Gist_earth_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="terrain_r" > <img src="{% static "colormaps\Miscellaneous\terrain_r.png" %}"><a href="#">Terrain_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_stern_r" > <img src="{% static "colormaps\Miscellaneous\gist_stern_r.png" %}"><a href="#">Gist_stern_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gnuplot_r" > <img src="{% static "colormaps\Miscellaneous\gnuplot_r.png" %}"><a href="#">Gnuplot_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gnuplot2_r" > <img src="{% static "colormaps\Miscellaneous\gnuplot2_r.png" %}"><a href="#">Gnuplot2_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="CMRmap_r" > <img src="{% static "colormaps\Miscellaneous\CMRmap_r.png" %}"><a href="#">CMRmap_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="cubehelix_r" > <img src="{% static "colormaps\Miscellaneous\cubehelix_r.png" %}"><a href="#">Cubehelix_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="brg_r" > <img src="{% static "colormaps\Miscellaneous\brg_r.png" %}"><a href="#">Brg_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="hsv_r" > <img src="{% static "colormaps\Miscellaneous\hsv_r.png" %}"><a href="#">Hsv_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_rainbow_r" > <img src="{% static "colormaps\Miscellaneous\gist_rainbow_r.png" %}"><a href="#">Gist_rainbow_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="rainbow_r" > <img src="{% static "colormaps\Miscellaneous\rainbow_r.png" %}"><a href="#">Rainbow_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="jet_r" > <img src="{% static "colormaps\Miscellaneous\jet_r.png" %}"><a href="#">Jet_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="nipy_spectral_r" > <img src="{% static "colormaps\Miscellaneous\nipy_spectral_r.png" %}"><a href="#">Nipy_spectral_r</a></button></a>
+                                  <a href="#"><button href="#" id="color_map" type="submit" name="gist_ncar_r" > <img src="{% static "colormaps\Miscellaneous\gist_ncar_r.png" %}"><a href="#">Gist_ncar_r</a></button></a>
+                              </div>                            
+                          </li>
+                      </ul>
+              </div>
+          </div>
+      </div>
+      <!-- HEADER - END -->
+      
+      <!-- CONTENT - START -->
+      <div class="main">
+        <!-- Left -->
+        <div class="left">
+          
+            <!-- BOX CATEGORIES -->
+               <div class="box box-circle-category" style="margin-bottom:20px;">
+                  <div class="header"><div class="tr"><div class="tc"></div></div></div>
+                  <div class="content">                      
+                      <ul>
+                        <h3 class="title">Left Eye</h3>
+                        <div class="slidecontainer">
+                          <input type="range" min="1" value="35" max="100" class="slider" id="myRange_L" name="left_eye_thres">
+                          <br><br>
+                          <h3>
+                              <p>Value: <span id="demo_l" ></span></p>
+                          </h3>
+                        </div>
+                        <h3 class="title">Right Eye</h3>
+                        <div class="slidecontainer">
+                          <input type="range" min="1" value="45" max="100" class="slider" id="myRange_R" name="right_eye_thres">
+                          <br><br>
+                          <h3>
+                              <p>Value: <span id="demo_r" ></span></p>
+                          </h3>
+                        </div>
+                      </ul>
+                  </div>
+                  <div class="footer"><div class="br"><div class="bc"></div></div></div>
+              </div>
+              {% comment %} <div class="slide slideshow-container" style="margin-left: 30px">
+                    <div class="box" id="box-slide">
+                        <!-- <div class="arrow-left"  onclick="plusSlides(-1)"><img src="images/arrow-left.png" alt="Left"></div> -->
+                        <div class="header"><div class="tr"><div class="tc"></div></div></div>
+                        <div class="content">
+                            <ul class="">
+                                <li class="mySlides fade">
+                                    <img src="/static/images/bone_opencv.png" alt="product 01">
+                                    <div class="info">
+                                        <div class="overflow"></div>
+                                    </div>
+                                </li>
+                                <li class="mySlides fade">
+                                    <img src="/static/images/ocean_opencv.png" alt="product 02">
+                                    <div class="info">
+                                        <div class="overflow"></div>
+                                    </div>
+                                </li>
+                                <li class="mySlides fade">
+                                    <img src="/static/images/pink_opencv.png" alt="product 03">
+                                    <div class="info">
+                                        <div class="overflow"></div>
+                                    </div>
+                                </li>
+                                <li class="mySlides fade">
+                                    <img src="/static/images/hot_opencv.png" alt="product 04">
+                                    <div class="info">
+                                        <div class="overflow"></div>
+                                    </div>
+                                </li>
+                                <li class="mySlides fade">
+                                    <img src="/static/images/magma_opencv.png" alt="product 05">
+                                    <div class="info">
+                                        <div class="overflow"></div>
+                                    </div>
+                                </li>
+                                <li class="mySlides fade">
+                                    <img src="/static/images/twightlight_shift_opencv.png" alt="product 06">
+                                    <div class="info">
+                                        <div class="overflow"></div>
+                                    </div>
+                                </li>
+                                 <li class="mySlides fade">
+                                    <img src="/static/images/deepgreen_opencv.png" alt="product 06">
+                                    <div class="info">
+                                        <div class="overflow"></div>
+                                    </div>
+                                </li>
+                            </ul>
+                            <div class="clr"></div>
+                        </div>
+                        <div class="footer"><div class="br"><div class="bc"></div></div></div>
+                    </div>
+                    
+                </div>              {% endcomment %}
+        </div> 
+
+          <!-- Right -->
+          <div class="right">
+              <!-- Box about -->
+              <div class="box" id="box-faq">
+                  <div class="header"><div class="tr"><div class="tc"></div></div></div>
+                  <div class="content">                     
+                      <br><br>
+                          {% csrf_token %}
+                          <br><br>
+                            <input type='file' name='image'>          
+                          <br><br>             
+                      {% if raw_url or edit_url %}
+                      <span>
+                      <a href="#"><h3> RAW IMAGE: </h3></a>
+                      <div class="custom_border">
+                      <img src={{raw_url}} height=200 width=200>
+                      </div>  
+                      <a href="#"><h3> PROCESSED IMAGE: </h3></a>
+                      <img src={{edit_url}} height=500 width=500 style="margin-left: 130px;"><!--"{% static "colormaps\opencv\autumn.png" %}"    ,  >-->
+                      </span>
+                      {% endif %}                      
+                  </div>
+                  <div class="footer"><div class="br"><div class="bc"></div></div></div>
+              </div> 
+          </div>
+          
+          <div class="clr"></div>
+      </div>
+      <!-- CONTENT - END -->
+      
+      <!-- FOOTER - START -->
+      <!-- Opencv bone, ocean, pink, hot, magma, inferno, twilight_shifted, turbo, deepgreen,   -->
+      <!-- Matplot Greys_r, afmhot, gist_heat, copper, -->
+      <div id="footer">
+        <!-- Slide -->
+         <div class="slide">
+            	<div class="box" id="box-slide">
+                	{% comment %} <div class="arrow-left"  onclick="plusSlides(-1)"><img src="{% static "colormaps\opencv\autumn.png" %}"></div>
+                    <div class="arrow-right" onclick="plusSlides(1)"><img src="/static/images/arrow-right.png" alt="Right"></div> {% endcomment %}
+                    <div class="header"><div class="tr"><div class="tc"></div></div></div>
+                    <div class="content">
+                    	<ul>
+                            <li>            
+                                <a href="#"><button href="#" id="color_map" type="submit" name="bone_c" > <img src="{% static "colormaps\opencv\bone.png" %}"><a href="#">Bone</a></button></a>                          
+							</li>
+                            <li>
+                            	<a href="#"><button href="#" id="color_map" type="submit" name="ocean_c" > <img src="{% static "colormaps\opencv\ocean.png" %}"><a href="#">Ocean</a></button></a>
+							</li>
+                            <li>
+                            	<a href="#"><button href="#" id="color_map" type="submit" name="pink_c" > <img src="{% static "colormaps\opencv\pink.png" %}"><a href="#">Pink</a></button></a>
+							</li>
+                            <li>
+                            	<a href="#"><button href="#" id="color_map" type="submit" name="hot_c" > <img src="{% static "colormaps\opencv\hot.png" %}"><a href="#">Hot</a></button></a>
+							</li>
+                            <li>
+                            	<a href="#"><button href="#" id="color_map" type="submit" name="magma_c" > <img src="{% static "colormaps\opencv\magma.png" %}"><a href="#">Magma</a></button></a>
+							</li>
+                            <li>
+                                <a href="#"><button href="#" id="color_map" type="submit" name="deepgreen_c" > <img src="{% static "colormaps\opencv\deepgreen.png" %}"><a href="#">green</a></button></a>
+							</li>
+                            <li>
+                                <a href="#"><button href="#" id="color_map" type="submit" name="twilight_shifted_c" > <img src="{% static "colormaps\opencv\twilight_shifted.png" %}"><a href="#">Twilight</a></button></a>
+							</li>
+                            <li>
+                            	<a href="#"><button href="#" id="color_map" type="submit" name="turbo_c" > <img src="{% static "colormaps\opencv\turbo.png" %}"><a href="#">Turbo</a></button></a>
+							</li>
+                        </ul>
+                        
+                        <div class="clr"></div>
+                    </div>
+                    <div class="footer"><div class="br"><div class="bc"></div></div></div>
+                </div>
+            	
+            </div>
+          <div class="line-full"></div>
+          <!-- Copyright -->
+          <div class="copyright">
+            <div class="back-to-top"><a href="#wrapper">Top</a></div>
+            <p class="left">
+                Irys changer for Computer Vision<br />
+                  Image processing Project And Application.
+              </p>
+              <p class="right">
+                <a href="#"><img src="/static/images/youtube.png" alt="youtube"></a>
+                  <a href="#"><img src="/static/images/twitter.png" alt="twitter"></a>
+                  <a href="#"><img src="/static/images/google.png" alt="google"></a>
+                  <a href="#"><img src="/static/images/facebook.png" alt="facebook"></a>
+              </p>
+              <div class="clr"></div>
+          </div>
+      </div> 
+      <!-- FOOTER - END -->
+  </div>
+  <script>
+    var slider = document.getElementById("myRange_L");
+    var slider_r = document.getElementById("myRange_R");
+    var output = document.getElementById("demo_l");
+    var output_r = document.getElementById("demo_r");
+    output.innerHTML = slider.value; // Display the default slider value
+    output_r.innerHTML = slider_r.value;
+    // Update the current slider value (each time you drag the slider handle)
+     slider.oninput = function() {
+    output.innerHTML = this.value;
+    }
+    slider_r.oninput = function() {
+      output_r.innerHTML = this.value;
+    }
+    {% comment %}
+    var slideIndex = 0;
+    showSlides();
+
+    function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+    } {% endcomment %}
+  </script>
+  </form>
+    
+</body>
+</html>

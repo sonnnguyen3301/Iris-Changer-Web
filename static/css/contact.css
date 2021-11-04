@@ -1,0 +1,42 @@
+#box-address .content{
+	line-height: 20px;
+}
+#box-address .content a{
+	color: #a19411;
+	text-decoration: underline;
+}
+#box-address .content a:hover{
+	text-decoration: none;
+	opacity: 0.7;
+}
+.area-contact .title{
+	font: bold 20px/40px Arial,Hervetica, sans-serif;
+}
+.area-contact #form{
+	float: left;
+	width: 390px;
+}
+.area-contact #map{
+	margin-left: 392px;
+
+}
+.area-contact #map .map{
+	height: 360px;
+	overflow: hidden;
+	margin-top: 30px;
+}
+/* FORM - CONTACT 
+==================== */
+#contact-form{
+	margin-top: 20px;
+}
+#contact-form .row{
+	margin-bottom: 15px;
+}
+#contact-form .row p{
+	margin-bottom: 5px;
+}
+#contact-form .row p span{
+	color: #F00;
+	font-weight: bold;
+}
